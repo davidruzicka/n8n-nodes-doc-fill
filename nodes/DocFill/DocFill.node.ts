@@ -122,7 +122,7 @@ export class DocFill implements INodeType {
 				returnData.push(result);
 			} catch (error) {
 				if (this.continueOnFail()) {
-					items.push({ json: this.getInputData(itemIndex)[0].json, error, pairedItem: itemIndex });
+					returnData.push({ json: this.getInputData(itemIndex)[0].json, error, pairedItem: itemIndex });
 				} else {
 					if (error.context) {
 						error.context.itemIndex = itemIndex;
